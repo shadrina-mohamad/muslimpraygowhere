@@ -4,124 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prayer Room Finder</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #EEE7DA;
-            color: black;
-            margin: 0;
-        }
-        .header {
-            text-align: center;
-        }
-        .header img {
-            width: 100%;
-            height: auto;
-        }
-        .navbar {
-            overflow: hidden;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-        }
-        .navbar a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        .section {
-            display: none;
-        }
-        .section.active {
-            display: block;
-        }
-        .date-prayer-row {
-            background-color: #88AB8E;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .button-row {
-            display: flex;
-            justify-content: center;
-            background-color: #AFC8AD;
-            padding: 10px 0;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            margin: 0 10px;
-        }
-        .dropdown button {
-            background-color: #AFC8AD;
-            color: black;
-            padding: 14px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 20px; /* Rounded edges */
-        }
-        .dropdown button:hover {
-            background-color: #88AB8E;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .list-content-row {
-            text-align: center;
-            padding: 20px 0;
-        }
-        .map-row {
-            text-align: center;
-            padding: 20px 0;
-        }
-        .footer {
-            background-color: black;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        .contact-form {
-            text-align: left;
-            margin: 0 auto;
-            max-width: 400px;
-        }
-        .contact-form label {
-            display: block;
-            margin: 10px 0 5px;
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    
 </head>
 <body>
 
@@ -214,7 +99,7 @@
             <select id="type" name="type" onchange="showFormFields()">
                 <option value="0" selected disabled>Select an option</option>
                 <option value="recommend">Recommend a new prayer spot</option>
-                <option value="enquiry">General enquiry</option>
+                <option value="enquiry">General enquiry/ Report an issue</option>
             </select>
             
             <div id="recommend-form" style="display: none;">
@@ -237,116 +122,12 @@
         </form>
     </div>
     
-    <script>
-        function showFormFields() {
-            var type = document.getElementById("type").value;
-            if (type === "recommend") {
-                document.getElementById("recommend-form").style.display = "block";
-                document.getElementById("enquiry-form").style.display = "none";
-            } else if (type === "enquiry") {
-                document.getElementById("enquiry-form").style.display = "block";
-                document.getElementById("recommend-form").style.display = "none";
-            } else {
-                document.getElementById("recommend-form").style.display = "none";
-                document.getElementById("enquiry-form").style.display = "none";
-            }
-        }
-    </script>
+    
     
 
     <div class="footer">
-        &copy; 2024 Prayer Room Finder
+        &copy; MuslimsPrayGoWhere
     </div>
-
-    <script>
-        // Function to update date and prayer times
-        function updateDateAndPrayerTimes() {
-            const dateElement = document.getElementById('date');
-            const prayerTimesElement = document.getElementById('prayer-times');
-
-            // Get today's date
-            const today = new Date();
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            const todayString = today.toLocaleDateString(undefined, options);
-            dateElement.textContent = `Today's Date: ${todayString}`;
-
-            // Dummy prayer times (replace with actual API call if needed)
-            const prayerTimes = {
-                Fajr: '05:00 AM',
-                Dhuhr: '12:30 PM',
-                Asr: '03:45 PM',
-                Maghrib: '07:00 PM',
-                Isha: '08:30 PM'
-            };
-
-            let prayerTimesString = 'Prayer Times: ';
-            for (const [prayer, time] of Object.entries(prayerTimes)) {
-                prayerTimesString += `${prayer}: ${time} `;
-            }
-            prayerTimesElement.textContent = prayerTimesString.trim();
-        }
-
-        // Function to show list content based on button clicked
-        function showList(category, region) {
-            const listContent = document.getElementById('list-content');
-            let content = '';
-
-            const lists = {
-                public: {
-                    north: ['Public Space 1', 'Public Space 2', 'Public Space 3'],
-                    central: ['Public Space 4', 'Public Space 5', 'Public Space 6'],
-                    south: ['Public Space 7', 'Public Space 8', 'Public Space 9'],
-                    east: ['Public Space 10', 'Public Space 11', 'Public Space 12'],
-                    west: ['Public Space 13', 'Public Space 14', 'Public Space 15']
-                },
-                hospitals: {
-                    north: ['Hospital 1', 'Hospital 2', 'Hospital 3'],
-                    central: ['Hospital 4', 'Hospital 5', 'Hospital 6'],
-                    south: ['Hospital 7', 'Hospital 8', 'Hospital 9'],
-                    east: ['Hospital 10', 'Hospital 11', 'Hospital 12'],
-                    west: ['Hospital 13', 'Hospital 14', 'Hospital 15']
-                },
-                campus: {
-                    north: ['Campus 1', 'Campus 2', 'Campus 3'],
-                    central: ['Campus 4', 'Campus 5', 'Campus 6'],
-                    south: ['Campus 7', 'Campus 8', 'Campus 9'],
-                    east: ['Campus 10', 'Campus 11', 'Campus 12'],
-                    west: ['Campus 13', 'Campus 14', 'Campus 15']
-                },
-                mosques: {
-                    north: ['Mosque 1', 'Mosque 2', 'Mosque 3'],
-                    central: ['Mosque 4', 'Mosque 5', 'Mosque 6'],
-                    south: ['Mosque 7', 'Mosque 8', 'Mosque 9'],
-                    east: ['Mosque 10', 'Mosque 11', 'Mosque 12'],
-                    west: ['Mosque 13', 'Mosque 14', 'Mosque 15']
-                }
-            };
-
-            if (lists[category] && lists[category][region]) {
-                content = `<h2>${category.charAt(0).toUpperCase() + category.slice(1)} - ${region.charAt(0).toUpperCase() + region.slice(1)}</h2><ul>`;
-                lists[category][region].forEach(item => {
-                    content += `<li>${item}</li>`;
-                });
-                content += '</ul>';
-            } else {
-                content = '<p>No content available for this category and region.</p>';
-            }
-
-            listContent.innerHTML = content;
-        }
-
-        // Function to show the appropriate section
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
-        }
-
-        // Update date and prayer times on page load
-        window.onload = updateDateAndPrayerTimes;
-    </script>
 
 <?php
 if (isset($_POST['submit'])) {
