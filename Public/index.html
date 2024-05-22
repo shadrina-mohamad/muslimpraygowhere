@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer Room Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #EEE7DA;
+            color: black;
+            margin: 0;
+        }
+        .header {
+            text-align: center;
+        }
+        .header img {
+            width: 100%;
+            height: auto;
+        }
+        .navbar {
+            overflow: hidden;
+            background-color: #88AB8E;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .button-row {
+            display: flex;
+            justify-content: center;
+            background-color: #AFC8AD;
+            padding: 10px 0;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .dropdown button {
+            background-color: #AFC8AD;
+            color: black;
+            padding: 14px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .dropdown button:hover {
+            background-color: #88AB8E;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="header-image.jpg" alt="Header Image">
+    </div>
+
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="button-row">
+        <div class="dropdown">
+            <button>Public Spaces</button>
+            <div class="dropdown-content">
+                <a href="#north-public">North</a>
+                <a href="#central-public">Central</a>
+                <a href="#south-public">South</a>
+                <a href="#east-public">East</a>
+                <a href="#west-public">West</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button>Hospitals</button>
+            <div class="dropdown-content">
+                <a href="#north-hospitals">North</a>
+                <a href="#central-hospitals">Central</a>
+                <a href="#south-hospitals">South</a>
+                <a href="#east-hospitals">East</a>
+                <a href="#west-hospitals">West</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button>Campus</button>
+            <div class="dropdown-content">
+                <a href="#north-campus">North</a>
+                <a href="#central-campus">Central</a>
+                <a href="#south-campus">South</a>
+                <a href="#east-campus">East</a>
+                <a href="#west-campus">West</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button>Mosques</button>
+            <div class="dropdown-content">
+                <a href="#north-mosques">North</a>
+                <a href="#central-mosques">Central</a>
+                <a href="#south-mosques">South</a>
+                <a href="#east-mosques">East</a>
+                <a href="#west-mosques">West</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Prayer Room Finder
+    </div>
+
+</body>
+</html>
