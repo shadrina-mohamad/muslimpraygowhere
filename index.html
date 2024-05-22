@@ -11,8 +11,9 @@
 <body>
 
     <div class="header">
-        <img src="header-image.jpg" alt="Header Image">
+        <img src="Muslimpraygowhere banner 01.png" alt="Header Image" style="width: 100%;">
     </div>
+    
 
     <div class="navbar">
         <a href="#home" onclick="showSection('home')">Home</a>
@@ -22,7 +23,7 @@
 
     <div id="home" class="section active">
         <div class="date-prayer-row">
-            <div id="date"></div>
+            <div id="date"></div><br>
             <div id="prayer-times"></div>
         </div>
 
@@ -48,7 +49,7 @@
                 </div>
             </div>
             <div class="dropdown">
-                <button>Campus</button>
+                <button>Campuses</button>
                 <div class="dropdown-content">
                     <a href="#" onclick="showList('campus', 'north')">North</a>
                     <a href="#" onclick="showList('campus', 'central')">Central</a>
@@ -78,12 +79,12 @@
         </div>
     </div>
 
-    <div id="about" class="section">
+    <div id="about" class="section" style="width: 800px; margin: 0 auto; text-align: center;">
         <h2>About Us</h2>
         <p>This is the about page. Provide information about the service here.</p>
     </div>
 
-    <div id="contact" class="section">
+    <div id="contact" class="section" style="text-align: center;">
         <h2>Contact Us</h2>
         <form class="contact-form" action="submit_form.php" method="post" enctype="multipart/form-data">
             <label for="name">Name:</label>
@@ -121,12 +122,20 @@
             <input type="submit" name="submit" value="Submit">
         </form>
     </div>
-    
-    
-    
 
+    <div id="disclaimer" class="section" style="width: 800px; margin: 0 auto; text-align: center;">
+        <h2>Disclaimer</h2>
+        <p>This website is created for learning purposes only. The information provided here should not be considered professional advice. 
+            Please note that we make no guarantees regarding the accuracy, completeness, or reliability of the contents of this website. 
+            Any actions you take based on the contents of this website are at your own risk. 
+            We are not liable for any losses or damages incurred from the use of this website.</p>
+    </div>
+    
+        
+    </div>
+    
     <div class="footer">
-        &copy; MuslimsPrayGoWhere
+        &copy; MuslimsPrayGoWhere | <a href="#disclaimer" onclick="showSection('disclaimer')">Disclaimer</a>
     </div>
 
 <?php
