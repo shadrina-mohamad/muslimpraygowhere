@@ -13,32 +13,42 @@ function showFormFields() {
             }
 }
 
-   // Function to update date and prayer times
-   function updateDateAndPrayerTimes() {
+// Function to update date, Muslim date, and prayer times
+function updateDateAndPrayerTimes() {
     const dateElement = document.getElementById('date');
+    const muslimDateElement = document.getElementById('muslim-date');
     const prayerTimesElement = document.getElementById('prayer-times');
 
-    // Get today's date
-    const today = new Date();
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const todayString = today.toLocaleDateString(undefined, options);
-    dateElement.textContent = `Today's Date: ${todayString}`;
+     // Get today's date and day of the week
+     const today = new Date();
+     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+     const todayString = today.toLocaleDateString(undefined, options);
+     dateElement.textContent = `${todayString}`;
 
-    // Dummy prayer times (replace with actual API call if needed)
+    // Dummy Muslim date (replace with actual calculation if possible)
+    const muslimDate = '13 Zulkaedah 1445H'; // Example Muslim date
+    muslimDateElement.textContent = `${muslimDate}`;
+
+    // Dummy prayer times with icons (replace with actual data)
     const prayerTimes = {
-        Fajr: '05:00 AM',
-        Dhuhr: '12:30 PM',
-        Asr: '03:45 PM',
-        Maghrib: '07:00 PM',
-        Isha: '08:30 PM'
+        Fajr: { time: '05:00 AM', icon: 'fajr-icon.png' },
+        Dhuhr: { time: '12:30 PM', icon: 'dhuhr-icon.png' },
+        Asr: { time: '03:45 PM', icon: 'asr-icon.png' },
+        Maghrib: { time: '07:00 PM', icon: 'maghrib-icon.png' },
+        Isha: { time: '08:30 PM', icon: 'isha-icon.png' }
     };
 
-    let prayerTimesString = 'Prayer Times: ';
-    for (const [prayer, time] of Object.entries(prayerTimes)) {
-        prayerTimesString += `${prayer}: ${time} `;
+    let prayerTimesString = '';
+    for (const [prayer, data] of Object.entries(prayerTimes)) {
+        prayerTimesString += `<img src="${data.icon}" alt="${prayer} icon"> ${prayer}: ${data.time} `;
     }
-    prayerTimesElement.textContent = prayerTimesString.trim();
+    prayerTimesElement.innerHTML = prayerTimesString.trim();
 }
+
+// Update date, Muslim date, and prayer times on page load
+window.onload = updateDateAndPrayerTimes;
+
+
 
 // Function to show list content based on button clicked
 function showList(category, region) {
@@ -97,6 +107,3 @@ function showSection(sectionId) {
     });
     document.getElementById(sectionId).classList.add('active');
 }
-
-// Update date and prayer times on page load
-window.onload = updateDateAndPrayerTimes;
