@@ -35,6 +35,12 @@
             background-color: #ddd;
             color: black;
         }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
         .date-prayer-row {
             background-color: #88AB8E;
             padding: 10px 0;
@@ -58,6 +64,7 @@
             border: none;
             cursor: pointer;
             font-size: 16px;
+            border-radius: 20px; /* Rounded edges */
         }
         .dropdown button:hover {
             background-color: #88AB8E;
@@ -83,6 +90,14 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+        .list-content-row {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .map-row {
+            text-align: center;
+            padding: 20px 0;
+        }
         .footer {
             background-color: black;
             color: white;
@@ -91,6 +106,20 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+        }
+        .contact-form {
+            text-align: left;
+            margin: 0 auto;
+            max-width: 400px;
+        }
+        .contact-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
         }
     </style>
 </head>
@@ -101,58 +130,129 @@
     </div>
 
     <div class="navbar">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" onclick="showSection('home')">Home</a>
+        <a href="#about" onclick="showSection('about')">About</a>
+        <a href="#contact" onclick="showSection('contact')">Contact</a>
     </div>
 
-    <div class="date-prayer-row">
-        <div id="date"></div>
-        <div id="prayer-times"></div>
+    <div id="home" class="section active">
+        <div class="date-prayer-row">
+            <div id="date"></div>
+            <div id="prayer-times"></div>
+        </div>
+
+        <div class="button-row">
+            <div class="dropdown">
+                <button>Public Spaces</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="showList('public', 'north')">North</a>
+                    <a href="#" onclick="showList('public', 'central')">Central</a>
+                    <a href="#" onclick="showList('public', 'south')">South</a>
+                    <a href="#" onclick="showList('public', 'east')">East</a>
+                    <a href="#" onclick="showList('public', 'west')">West</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button>Hospitals</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="showList('hospitals', 'north')">North</a>
+                    <a href="#" onclick="showList('hospitals', 'central')">Central</a>
+                    <a href="#" onclick="showList('hospitals', 'south')">South</a>
+                    <a href="#" onclick="showList('hospitals', 'east')">East</a>
+                    <a href="#" onclick="showList('hospitals', 'west')">West</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button>Campus</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="showList('campus', 'north')">North</a>
+                    <a href="#" onclick="showList('campus', 'central')">Central</a>
+                    <a href="#" onclick="showList('campus', 'south')">South</a>
+                    <a href="#" onclick="showList('campus', 'east')">East</a>
+                    <a href="#" onclick="showList('campus', 'west')">West</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button>Mosques</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="showList('mosques', 'north')">North</a>
+                    <a href="#" onclick="showList('mosques', 'central')">Central</a>
+                    <a href="#" onclick="showList('mosques', 'south')">South</a>
+                    <a href="#" onclick="showList('mosques', 'east')">East</a>
+                    <a href="#" onclick="showList('mosques', 'west')">West</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-content-row" id="list-content">
+            <!-- Content for lists will appear here -->
+        </div>
+
+        <div class="map-row">
+            <div id="map" style="width:100%;height:400px;background:gray;">Google Map Placeholder</div>
+        </div>
     </div>
 
-    <div class="button-row">
-        <div class="dropdown">
-            <button>Public Spaces</button>
-            <div class="dropdown-content">
-                <a href="#north-public">North</a>
-                <a href="#central-public">Central</a>
-                <a href="#south-public">South</a>
-                <a href="#east-public">East</a>
-                <a href="#west-public">West</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button>Hospitals</button>
-            <div class="dropdown-content">
-                <a href="#north-hospitals">North</a>
-                <a href="#central-hospitals">Central</a>
-                <a href="#south-hospitals">South</a>
-                <a href="#east-hospitals">East</a>
-                <a href="#west-hospitals">West</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button>Campus</button>
-            <div class="dropdown-content">
-                <a href="#north-campus">North</a>
-                <a href="#central-campus">Central</a>
-                <a href="#south-campus">South</a>
-                <a href="#east-campus">East</a>
-                <a href="#west-campus">West</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button>Mosques</button>
-            <div class="dropdown-content">
-                <a href="#north-mosques">North</a>
-                <a href="#central-mosques">Central</a>
-                <a href="#south-mosques">South</a>
-                <a href="#east-mosques">East</a>
-                <a href="#west-mosques">West</a>
-            </div>
-        </div>
+    <div id="about" class="section">
+        <h2>About Us</h2>
+        <p>This is the about page. Provide information about the service here.</p>
     </div>
+
+    <div id="contact" class="section">
+        <h2>Contact Us</h2>
+        <form class="contact-form" action="submit_form.php" method="post" enctype="multipart/form-data">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="contact-number">Contact Number:</label>
+            <input type="tel" id="contact-number" name="contact-number" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="type">Select Type:</label>
+            <select id="type" name="type" onchange="showFormFields()">
+                <option value="0" selected disabled>Select an option</option>
+                <option value="recommend">Recommend a new prayer spot</option>
+                <option value="enquiry">General enquiry</option>
+            </select>
+            
+            <div id="recommend-form" style="display: none;">
+                <label for="address">Address of Prayer Spot:</label>
+                <input type="text" id="address" name="address">
+                
+                <label for="description">Description of Prayer Spot:</label>
+                <textarea id="description" name="description" rows="4"></textarea>
+                
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" name="image" accept="image/*">
+            </div>
+            
+            <div id="enquiry-form" style="display: none;">
+                <label for="enquiry">Enquiry:</label>
+                <textarea id="enquiry" name="enquiry" rows="4"></textarea>
+            </div>
+            
+            <input type="submit" name="submit" value="Submit">
+        </form>
+    </div>
+    
+    <script>
+        function showFormFields() {
+            var type = document.getElementById("type").value;
+            if (type === "recommend") {
+                document.getElementById("recommend-form").style.display = "block";
+                document.getElementById("enquiry-form").style.display = "none";
+            } else if (type === "enquiry") {
+                document.getElementById("enquiry-form").style.display = "block";
+                document.getElementById("recommend-form").style.display = "none";
+            } else {
+                document.getElementById("recommend-form").style.display = "none";
+                document.getElementById("enquiry-form").style.display = "none";
+            }
+        }
+    </script>
+    
 
     <div class="footer">
         &copy; 2024 Prayer Room Finder
@@ -186,9 +286,95 @@
             prayerTimesElement.textContent = prayerTimesString.trim();
         }
 
+        // Function to show list content based on button clicked
+        function showList(category, region) {
+            const listContent = document.getElementById('list-content');
+            let content = '';
+
+            const lists = {
+                public: {
+                    north: ['Public Space 1', 'Public Space 2', 'Public Space 3'],
+                    central: ['Public Space 4', 'Public Space 5', 'Public Space 6'],
+                    south: ['Public Space 7', 'Public Space 8', 'Public Space 9'],
+                    east: ['Public Space 10', 'Public Space 11', 'Public Space 12'],
+                    west: ['Public Space 13', 'Public Space 14', 'Public Space 15']
+                },
+                hospitals: {
+                    north: ['Hospital 1', 'Hospital 2', 'Hospital 3'],
+                    central: ['Hospital 4', 'Hospital 5', 'Hospital 6'],
+                    south: ['Hospital 7', 'Hospital 8', 'Hospital 9'],
+                    east: ['Hospital 10', 'Hospital 11', 'Hospital 12'],
+                    west: ['Hospital 13', 'Hospital 14', 'Hospital 15']
+                },
+                campus: {
+                    north: ['Campus 1', 'Campus 2', 'Campus 3'],
+                    central: ['Campus 4', 'Campus 5', 'Campus 6'],
+                    south: ['Campus 7', 'Campus 8', 'Campus 9'],
+                    east: ['Campus 10', 'Campus 11', 'Campus 12'],
+                    west: ['Campus 13', 'Campus 14', 'Campus 15']
+                },
+                mosques: {
+                    north: ['Mosque 1', 'Mosque 2', 'Mosque 3'],
+                    central: ['Mosque 4', 'Mosque 5', 'Mosque 6'],
+                    south: ['Mosque 7', 'Mosque 8', 'Mosque 9'],
+                    east: ['Mosque 10', 'Mosque 11', 'Mosque 12'],
+                    west: ['Mosque 13', 'Mosque 14', 'Mosque 15']
+                }
+            };
+
+            if (lists[category] && lists[category][region]) {
+                content = `<h2>${category.charAt(0).toUpperCase() + category.slice(1)} - ${region.charAt(0).toUpperCase() + region.slice(1)}</h2><ul>`;
+                lists[category][region].forEach(item => {
+                    content += `<li>${item}</li>`;
+                });
+                content += '</ul>';
+            } else {
+                content = '<p>No content available for this category and region.</p>';
+            }
+
+            listContent.innerHTML = content;
+        }
+
+        // Function to show the appropriate section
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
         // Update date and prayer times on page load
         window.onload = updateDateAndPrayerTimes;
     </script>
 
+<?php
+if (isset($_POST['submit'])) {
+    // Gather form data
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    // File upload handling
+    $targetDir = "uploads/";
+    $targetFile = $targetDir . basename($_FILES["image"]["name"]);
+    move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile);
+
+    // Prepare email message
+    $to = "shadrinamohd@gmail.com"; // Change this to your email address
+    $subject = "New Contact Form Submission";
+    $body = "Name: $name\nEmail: $email\nMessage: $message";
+    $headers = "From: $email";
+
+    // Send email
+    if (mail($to, $subject, $body, $headers)) {
+        echo "Message sent successfully!";
+    } else {
+        echo "Error sending message.";
+    }
+} else {
+    echo "Form submission error.";
+}
+?>
 </body>
 </html>
