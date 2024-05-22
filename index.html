@@ -20,12 +20,13 @@
         }
         .navbar {
             overflow: hidden;
-            background-color: #88AB8E;
+            background-color: black;
+            display: flex;
+            justify-content: center;
         }
         .navbar a {
-            float: left;
             display: block;
-            color: black;
+            color: white;
             text-align: center;
             padding: 14px 20px;
             text-decoration: none;
@@ -33,6 +34,11 @@
         .navbar a:hover {
             background-color: #ddd;
             color: black;
+        }
+        .date-prayer-row {
+            background-color: #88AB8E;
+            padding: 10px 0;
+            text-align: center;
         }
         .button-row {
             display: flex;
@@ -100,6 +106,11 @@
         <a href="#contact">Contact</a>
     </div>
 
+    <div class="date-prayer-row">
+        <div id="date"></div>
+        <div id="prayer-times"></div>
+    </div>
+
     <div class="button-row">
         <div class="dropdown">
             <button>Public Spaces</button>
@@ -146,6 +157,38 @@
     <div class="footer">
         &copy; 2024 Prayer Room Finder
     </div>
+
+    <script>
+        // Function to update date and prayer times
+        function updateDateAndPrayerTimes() {
+            const dateElement = document.getElementById('date');
+            const prayerTimesElement = document.getElementById('prayer-times');
+
+            // Get today's date
+            const today = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const todayString = today.toLocaleDateString(undefined, options);
+            dateElement.textContent = `Today's Date: ${todayString}`;
+
+            // Dummy prayer times (replace with actual API call if needed)
+            const prayerTimes = {
+                Fajr: '05:00 AM',
+                Dhuhr: '12:30 PM',
+                Asr: '03:45 PM',
+                Maghrib: '07:00 PM',
+                Isha: '08:30 PM'
+            };
+
+            let prayerTimesString = 'Prayer Times: ';
+            for (const [prayer, time] of Object.entries(prayerTimes)) {
+                prayerTimesString += `${prayer}: ${time} `;
+            }
+            prayerTimesElement.textContent = prayerTimesString.trim();
+        }
+
+        // Update date and prayer times on page load
+        window.onload = updateDateAndPrayerTimes;
+    </script>
 
 </body>
 </html>
