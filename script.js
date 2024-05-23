@@ -96,6 +96,8 @@ function showList(category, region) {
         content = '<p>No content available for this category and region.</p>';
     }
 
+    //Function to close all other sections
+    
     const sections = document.querySelectorAll('.section');
     sections.forEach(section => {
         section.classList.remove('active');
@@ -106,6 +108,8 @@ function showList(category, region) {
 
 // Function to show the appropriate section
 function showSection(sectionId) {
+
+    // Next line is to close all other lists
     // const listContent = document.getElementById('list-content');
     // let content = '';
     // listContent.innerHTML = content;
@@ -118,3 +122,5 @@ function showSection(sectionId) {
     });
     document.getElementById(sectionId).classList.add('active');
 }
+
+
