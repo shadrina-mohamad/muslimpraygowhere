@@ -89,18 +89,29 @@ function showList(category, region) {
     if (lists[category] && lists[category][region]) {
         content = `<h2>${category.charAt(0).toUpperCase() + category.slice(1)} - ${region.charAt(0).toUpperCase() + region.slice(1)}</h2><ul>`;
         lists[category][region].forEach(item => {
-            content += `<li>${item}</li>`;
+            content += `<p>${item}</p>`;
         });
         content += '</ul>';
     } else {
         content = '<p>No content available for this category and region.</p>';
     }
 
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+
     listContent.innerHTML = content;
 }
 
 // Function to show the appropriate section
 function showSection(sectionId) {
+    // const listContent = document.getElementById('list-content');
+    // let content = '';
+    // listContent.innerHTML = content;
+
+    document.getElementById('list-content').innerHTML = '';
+
     const sections = document.querySelectorAll('.section');
     sections.forEach(section => {
         section.classList.remove('active');
