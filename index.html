@@ -42,9 +42,9 @@
             <div class="dropdown">
                 <button>Public Spaces</button>
                 <div class="dropdown-content">
-                    <a href="#" onclick="showList('public', 'north')">North</a>
-                    <a href="#" onclick="showList('public', 'central')">Central</a>
-                    <a href="#" onclick="showList('public', 'south')">South</a>
+                    <a href="#" onclick="showList('public', 'north')">North</a> 
+                    <a href="#" onclick="showList('public', 'central')">Central</a> 
+                    <a href="#" onclick="showList('public', 'south')">South</a> 
                     <a href="#" onclick="showList('public', 'east')">East</a>
                     <a href="#" onclick="showList('public', 'west')">West</a>
                 </div>
@@ -92,6 +92,7 @@
         <h2>About Us</h2>
         <p>This is the about page. Provide information about the service here.</p>
     </div>
+</div>
 
     <div id="contact" class="section" style="text-align: center;">
         <h2>Contact Us</h2>
@@ -143,7 +144,11 @@
         
     </div>
     
-    <div class="map-row">
+    <div>
+        <div class="search-container">
+            <input type="text" class="postal-code-input" placeholder="Enter postal code">
+            <button class="search-button">Search</button>
+        </div><br>
         <iframe src="https://www.google.com/maps/d/u/2/embed?mid=1bRo5K8UoS_rP1RWv8IYmE8Z1m1XgQAs&ehbc=2E312F" width="100%" height="480"></iframe>
     </div>
 
