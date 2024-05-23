@@ -101,16 +101,6 @@ body {
     bottom: 0;
 }
 
-.contact-form-container {
-    text-align: left;
-    margin: 0 auto;
-    max-width: 400px;
-    border: 1px solid #ccc; /* Border color */
-    border-radius: 10px; /* Rounded corners */
-    padding: 20px; /* Padding inside the border */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for better appearance */
-}
-
 .contact-form {
     width: 100%;
 }
