@@ -58,32 +58,32 @@ function showList(category, region) {
     const lists = {
        
         public : {
-            north: ['Al-Ameen Eating Corner,<br> 35 Marsiling Industrial Estate Rd 3, S739257', 'Bishan Stadium<br> 7 Bishan Street 14, S579784', 'Singapore Mandai Zoo<br>80 Mandai Lake Road, S729826'],
-            central: ['National Stadium,<br>1 Stadium Dr, S397629', 'Lucky Plaza,<br>304 Orchard Road, S238863', 'Plaza Singapura,<br>68 Orchard Road, S238839'],
-            south: ['Civil Service College,<br> 31 North Buona Vista Rd, S275983', 'Keppel Bay Tower,<br>1 Harbourfront Avenue, S098632', 'Vivocity,<br>1 Harbourfront Walk, S098585'],
-            east: ['Bedok Mall,<br>311 New Upper Changi Rd, S467360', 'Downtown East,<br>1 Pasir Ris Close, S519599', 'Ikea Tampines,<br>60 Tampines North Drive 2, S528764'],
-            west: ['Bukit Batok Driving Centre,<br>815 Bukit Batok West Avenue 5, S659085', 'Jurong Point,<br>1 Jurong West Central 2, S648886', 'Queensway Shopping Centre,<br>1 Queensway, S149053']
+            north: ['<b>Al-Ameen Eating Corner</b><br> 35 Marsiling Industrial Estate Rd 3, S739257', '<b>Bishan Stadium</b><br> 7 Bishan Street 14, S579784', '<b>Singapore Mandai Zoo</b><br>80 Mandai Lake Road, S729826'],
+            central: ['<b>National Stadium</b><br>1 Stadium Dr, S397629', '<b>Lucky Plaza</b><br>304 Orchard Road, S238863', '<b>Plaza Singapura</b><br>68 Orchard Road, S238839'],
+            south: ['<b>Civil Service College</b><br> 31 North Buona Vista Rd, S275983', '<b>Keppel Bay Tower</b><br>1 Harbourfront Avenue, S098632', '<b>Vivocity</b><br>1 Harbourfront Walk, S098585'],
+            east: ['<b>Bedok Mall</b><br>311 New Upper Changi Rd, S467360', '<b>Downtown East</b><br>1 Pasir Ris Close, S519599', '<b>Ikea Tampines</b><br>60 Tampines North Drive 2, S528764'],
+            west: ['<b>Bukit Batok Driving Centre</b><br>815 Bukit Batok West Avenue 5, S659085', '<b>Jurong Point</b><br>1 Jurong West Central 2, S648886', '<b>Queensway Shopping Centre</b><br>1 Queensway, S149053']
         },
         hospitals: {
-            north: ['Khoo Teck Puat Hospital,<br>90 Yishun Central, S768828', 'Thomson Medical Centre,<br>339 Thomson Road, S307677'],
-            central: ['KK Women and Children Hospital,<br>100 Bukit Timah Road, S229899', 'Mount Elizabeth Novena Hospital,<br>38 Irrawady Rd, S329563', 'Raffles Hospital,<br>585 North Bridge Road, S188770'],
-            south: ['Gleneagles Hospital,<br>6A Napier Road, S258500', 'National University Hospital,<br> 5 Lower Kent Ridge Road, S119074'],
-            east: ['Parkway East Hospital - Formerly East Shore Hospital,<br>321 Joo Chiat Place, S427990', 'Sengkang General Hospital,<br>110 Sengkang E WAy, S544886'],
-            west: ['Ng Teng Fong General Hospital,<br>1 Jurong East Street 21, S609606']
+            north: ['<b>Khoo Teck Puat Hospital</b><br>90 Yishun Central, S768828', '<b>Thomson Medical Centre</b><br>339 Thomson Road, S307677'],
+            central: ['<b>KK Women and Children Hospital</b><br>100 Bukit Timah Road, S229899', '<b>Mount Elizabeth Novena Hospital</b><br>38 Irrawady Rd, S329563', '<b>Raffles Hospital</b><br>585 North Bridge Road, S188770'],
+            south: ['<b>Gleneagles Hospital</b><br>6A Napier Road, S258500', '<b>National University Hospital</b><br> 5 Lower Kent Ridge Road, S119074'],
+            east: ['<b>Parkway East Hospital - Formerly East Shore Hospital</b><br>321 Joo Chiat Place, S427990', '<b>Sengkang General Hospital</b><br>110 Sengkang E WAy, S544886'],
+            west: ['<b>Ng Teng Fong General Hospital</b><br>1 Jurong East Street 21, S609606']
         },
         campus: {
-            north: ['Nanyang Polytechnic,<br>180 Ang Mo Kio Ave 8, S569830'],
-            central: ['Singapore Management University (SMU),<br>81 Victoria St, S188065', 'ITE College Central,<br>2 Ang Mo Kio Dr, S567720'],
-            south: ['Singapore University of Social Sciences (SUSS),<br>462 Clementi Rd, S599494'],
-            east: ['ITE College East,<br>10 Simei Ave, S486047', 'Temasek Polytechnic,<br>21 Tampines Ave 1, S529757'],
-            west: ['Nanyang Technological University (NTU),<br>50 Nanyang Ave, S639798', 'ITE College West,<br>1 Choa Chu Kang Grove, S688236', 'National Institute Of Education (NIE),<br>1 Nanyang Walk,S637616']
+            north: ['<b>Nanyang Polytechnic</b><br>180 Ang Mo Kio Ave 8, S569830'],
+            central: ['<b>Singapore Management University (SMU)</b><br>81 Victoria St, S188065', '<b>ITE College Central</b><br>2 Ang Mo Kio Dr, S567720'],
+            south: ['<b>Singapore University of Social Sciences (SUSS)</b><br>462 Clementi Rd, S599494'],
+            east: ['<b>ITE College East</b><br>10 Simei Ave, S486047', '<b>Temasek Polytechnic</b><br>21 Tampines Ave 1, S529757'],
+            west: ['<b>Nanyang Technological University (NTU)</b><br>50 Nanyang Ave, S639798', '<b>ITE College West</b><br>1 Choa Chu Kang Grove, S688236', '<b>National Institute Of Education (NIE)</b><br>1 Nanyang Walk,S637616']
         },
         mosques: {
-            north: ['Masjid Muhajirin,<br>275 Braddell Road, S579704', 'Masjid Al-Muttaqin,<br>5140 Ang Mo Kio Central Avenue 6, S569844', 'Masjid Ahmad Ibrahim,<br>15 Jalan Ulu Seletar, S769227'],
-            central: ['Masjid Hajjah Fatimah,<br>4001 Beach Road, S199584', 'Masjid Malabar,<br>471 Victoria Street, S198370', 'Masjid Abdul Gafoor,<br>41 Dunlop Street, S198370'],
-            south: ['Masjid Haji Muhammad Salleh,<br>37 Palmer Road, S079424', 'Masjid Kampong Delta,<br>10 Delta Avenue, S169831', 'Masjid Temenggong,<br>30 Telok Blangah Road, S098827'],
-            east: ['Masjid Al-Istighfar,<br>2 Pasir Ris Walk, S518239', 'Masjid Darul Ghufran,<br>503 Tampines Avenue 5, S529651', 'Masjid Al-Ansar,<br>155 Bedok North Avenue 1, S469751'],
-            west: ['Masjid Pusara Aman,<br>11 Lim Chu Kang Road, S719452', 'Masjid Tentera Di Raja,<br>81 Clementi Road, S129797', 'Masjid Al-Mukminin,<br>271 Jurong East Street 21, S609603']
+            north: ['<b>Masjid Muhajirin</b><br>275 Braddell Road, S579704', '<b>Masjid Al-Muttaqin</b><br>5140 Ang Mo Kio Central Avenue 6, S569844', '<b>Masjid Ahmad Ibrahim</b><br>15 Jalan Ulu Seletar, S769227'],
+            central: ['<b>Masjid Hajjah Fatimah</b><br>4001 Beach Road, S199584', '<b>Masjid Malabar</b><br>471 Victoria Street, S198370', '<b>Masjid Abdul Gafoor</b><br>41 Dunlop Street, S198370'],
+            south: ['<b>Masjid Haji Muhammad Salleh</b><br>37 Palmer Road, S079424', '<b>Masjid Kampong Delta</b><br>10 Delta Avenue, S169831', '<b>Masjid Temenggong</b><br>30 Telok Blangah Road, S098827'],
+            east: ['<b>Masjid Al-Istighfar</b><br>2 Pasir Ris Walk, S518239', '<b>Masjid Darul Ghufran</b><br>503 Tampines Avenue 5, S529651', '<b>Masjid Al-Ansar</b><br>155 Bedok North Avenue 1, S469751'],
+            west: ['<b>Masjid Pusara Aman</b><br>11 Lim Chu Kang Road, S719452', '<b>Masjid Tentera Di Raja</b><br>81 Clementi Road, S129797', '<b>Masjid Al-Mukminin</b><br>271 Jurong East Street 21, S609603']
         }
     };
 
