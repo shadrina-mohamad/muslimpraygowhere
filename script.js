@@ -56,8 +56,7 @@ function showList(category, region) {
     let content = '';
 
     const lists = {
-        home : {<a src="index.html">}
-
+       
         public : {
             north: ['Al-Ameen Eating Corner,<br> 35 Marsiling Industrial Estate Rd 3, S739257', 'Bishan Stadium<br> 7 Bishan Street 14, S579784', 'Singapore Mandai Zoo<br>80 Mandai Lake Road, S729826'],
             central: ['National Stadium,<br>1 Stadium Dr, S397629', 'Lucky Plaza,<br>304 Orchard Road, S238863', 'Plaza Singapura,<br>68 Orchard Road, S238839'],
