@@ -34,6 +34,15 @@ body {
 .section.active {
     display: block;
 }
+
+#date { 
+    font-weight: bold; 
+}
+
+#muslim-date { 
+    font-weight: bold; 
+}
+
 .date-prayer-row {
     background-color: #88AB8E;
     padding: 10px 0;

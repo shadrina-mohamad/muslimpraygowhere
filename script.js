@@ -25,8 +25,8 @@ function updateDateAndPrayerTimes() {
      const todayString = today.toLocaleDateString(undefined, options);
      dateElement.textContent = `${todayString}`;
 
-    // Dummy Muslim date (replace with actual calculation if possible)
-    const muslimDate = '13 Zulkaedah 1445H'; // Example Muslim date
+    // Dummy Muslim date (calculation of Muslim calendar dates are complex) 
+    const muslimDate = '18 Zulkaedah 1445H'; // Sample Muslim date
     muslimDateElement.textContent = `${muslimDate}`;
 
     // Dummy prayer times with icons (replace with actual data)
@@ -40,7 +40,7 @@ function updateDateAndPrayerTimes() {
 
     let prayerTimesString = '';
     for (const [prayer, data] of Object.entries(prayerTimes)) {
-        prayerTimesString += `<img src="${data.icon}" alt="${prayer} icon"> ${prayer}: ${data.time} `;
+        prayerTimesString += `<img src="${data.icon}" style="width: 20px; height: 20px;"> ${prayer}: ${data.time} `;
     }
     prayerTimesElement.innerHTML = prayerTimesString.trim();
 }
@@ -56,6 +56,8 @@ function showList(category, region) {
     let content = '';
 
     const lists = {
+        home : {<a src="index.html">}
+
         public : {
             north: ['Al-Ameen Eating Corner,<br> 35 Marsiling Industrial Estate Rd 3, S739257', 'Bishan Stadium<br> 7 Bishan Street 14, S579784', 'Singapore Mandai Zoo<br>80 Mandai Lake Road, S729826'],
             central: ['National Stadium,<br>1 Stadium Dr, S397629', 'Lucky Plaza,<br>304 Orchard Road, S238863', 'Plaza Singapura,<br>68 Orchard Road, S238839'],
