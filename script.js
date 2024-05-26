@@ -29,7 +29,7 @@ function updateDateAndPrayerTimes() {
     const muslimDate = '18 Zulkaedah 1445H'; // Sample Muslim date
     muslimDateElement.textContent = `${muslimDate}`;
 
-    // Dummy prayer times with icons (replace with actual data)
+    // Dummy prayer times with icons (to replace with actual data)
     const prayerTimes = {
         Fajr: { time: '05:00 AM', icon: 'fajr-icon.png' },
         Dhuhr: { time: '12:30 PM', icon: 'dhuhr-icon.png' },
@@ -47,7 +47,6 @@ function updateDateAndPrayerTimes() {
 
 // Update date, Muslim date, and prayer times on page load
 window.onload = updateDateAndPrayerTimes;
-
 
 
 // Function to show list content based on button clicked
@@ -88,7 +87,7 @@ function showList(category, region) {
     };
 
     if (lists[category] && lists[category][region]) {
-        content = `<h2>${category.charAt(0).toUpperCase() + category.slice(1)} - ${region.charAt(0).toUpperCase() + region.slice(1)}</h2><ul>`;
+        content = `<h2>${category.charAt(0).toUpperCase() + category.slice(1)} - ${region.charAt(0).toUpperCase() + region.slice(1)}</h2>`;
         lists[category][region].forEach(item => {
             content += `<p>${item}</p>`;
         });

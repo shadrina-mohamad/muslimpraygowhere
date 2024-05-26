@@ -66,7 +66,7 @@ body {
     border: none;
     cursor: pointer;
     font-size: 16px;
-    border-radius: 20px; /* Rounded edges */
+    border-radius: 20px; /*rounded edges*/
 }
 .dropdown button:hover {
     background-color: #88AB8E;
@@ -120,10 +120,10 @@ body {
 }
 
 .contact-form input, .contact-form textarea, .contact-form select {
-    width: 400px; /* Adjust for padding */
+    width: 400px; 
     padding: 10px;
     margin: 5px 0;
-    font-size: 16px; /* Ensure the text size matches */
+    font-size: 16px; /
 }
 
 .contact-form input[type="submit"] {
@@ -139,10 +139,8 @@ body {
 }
 
 .contact-form input[type="submit"]:hover {
-    background-color: #333; /* Darker background on hover */
+    background-color: #333; 
 }
-
-
 
 .search-container {
     display: flex;
@@ -171,8 +169,4 @@ body {
 
 .search-button:hover {
     background-color: #333;
-}
-
-.h2 {
-    text-align: center;
 }
