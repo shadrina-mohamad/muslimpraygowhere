@@ -118,6 +118,8 @@ body {
 
 .contact-form {
     width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
     padding: 0 20px; /* Add padding for better spacing */
     box-sizing: border-box; /* Include padding in width calculation */
 }
@@ -128,10 +130,11 @@ body {
 }
 
 .contact-form input, .contact-form textarea, .contact-form select {
-    width: 400px; 
+    width: 100%;
     padding: 10px;
     margin: 5px 0;
-    font-size: 16px; /
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
 .contact-form input[type="submit"] {
@@ -142,7 +145,7 @@ body {
     padding: 10px 20px; 
     font-size: 16px; 
     cursor: pointer; 
-    width: 400px;
+    width: 100%;
     margin: 5px 0; 
 }
 
@@ -196,6 +199,15 @@ body {
         font-size: 14px; /* Adjust font size for smaller screens */
     }
     #about h2 {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+    .contact-form input, .contact-form textarea, .contact-form select {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+    .contact-form input[type="submit"] {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+    #contact h2 {
         font-size: 24px; /* Adjust font size for smaller screens */
     }
 }
