@@ -31,11 +31,11 @@ function updateDateAndPrayerTimes() {
 
     // Dummy prayer times with icons (to replace with actual data)
     const prayerTimes = {
-        Fajr: { time: '05:00 AM', icon: 'fajr-icon.png' },
-        Dhuhr: { time: '12:30 PM', icon: 'dhuhr-icon.png' },
-        Asr: { time: '03:45 PM', icon: 'asr-icon.png' },
-        Maghrib: { time: '07:00 PM', icon: 'maghrib-icon.png' },
-        Isha: { time: '08:30 PM', icon: 'isha-icon.png' }
+        Fajr: { time: '05:34 AM', icon: 'fajr-icon.png' },
+        Dhuhr: { time: '01:04 PM', icon: 'dhuhr-icon.png' },
+        Asr: { time: '04:28 PM', icon: 'asr-icon.png' },
+        Maghrib: { time: '07:08 PM', icon: 'maghrib-icon.png' },
+        Isha: { time: '08:22 PM', icon: 'isha-icon.png' }
     };
 
     let prayerTimesString = '';
