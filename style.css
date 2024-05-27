@@ -178,3 +178,24 @@ body {
 .search-button:hover {
     background-color: #333;
 }
+
+#about {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 600px) {
+    #about {
+        padding: 10px;
+    }
+    #about p {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+    #about h2 {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+}
