@@ -26,7 +26,7 @@ function updateDateAndPrayerTimes() {
      dateElement.textContent = `${todayString}`;
 
     // Dummy Muslim date (calculation of Muslim calendar dates are complex) 
-    const muslimDate = '18 Zulkaedah 1445H'; // Sample Muslim date
+    const muslimDate = '20 Zulkaedah 1445H'; // Sample Muslim date
     muslimDateElement.textContent = `${muslimDate}`;
 
     // Dummy prayer times with icons (to replace with actual data)
@@ -35,7 +35,7 @@ function updateDateAndPrayerTimes() {
         Dhuhr: { time: '01:04 PM', icon: 'dhuhr-icon.png' },
         Asr: { time: '04:28 PM', icon: 'asr-icon.png' },
         Maghrib: { time: '07:08 PM', icon: 'maghrib-icon.png' },
-        Isha: { time: '08:22 PM', icon: 'isha-icon.png' }
+        Isha: { time: '08:23 PM', icon: 'isha-icon.png' }
     };
 
     let prayerTimesString = '';
